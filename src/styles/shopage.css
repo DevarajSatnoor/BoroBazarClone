@@ -1,0 +1,290 @@
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.shopage-header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.shopage-header-main {
+  background: #e5e5e5;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+  transition: top 0.3s ease; /* Add transition for smooth animation */
+  animation: slideIn 0.5s ease-in-out; /* Apply the animation */
+}
+
+.shopage-header-below-bar {
+  background: #faf8f8;
+  height: 60px; /* Adjust height as needed */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease; /* Add transition for smooth animation */
+  animation: slideIn 0.5s ease forwards;
+  padding: 0px 20px;
+}
+
+.shopage-header-below-bar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  width: 160px; /* Adjust as needed */
+  height: auto;
+}
+.shopage-header-main-left {
+  display: flex;
+  gap: 60px;
+}
+.shopage-header-main-middle,
+.shopage-header-main-right,
+.middle-shopage-header,
+.right-shopage-header {
+  display: flex;
+  align-items: center;
+}
+
+.shopage-header-main-middle {
+  width: 800px; /* Adjust as needed */
+  height: 52px; /* Adjust as needed */
+  padding: 5px;
+  border-radius: 5px;
+  /* border: 1px solid #ccc; Add border to the search bar */
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.shopage-header-main-middle input[type="search"] {
+  width: calc(
+    100% - 40px
+  ); /* Subtract the width of the search icon (20px) and its right margin (20px) */
+  height: 52px;
+  border-radius: 5px;
+  border: none;
+  /* padding-right: 40px;/ Ensure enough space for the search icon */
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: large;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 50px; /* Position the search icon 20px from the right edge */
+  top: 52%;
+  transform: translateY(-50%);
+}
+
+.shopage-header-main-right-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 220px;
+}
+
+.right-shopage-header {
+  display: flex;
+  min-width: 220px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopage-header-main-right-signin-icon,
+.shopage-header-main-right-cart-icon {
+  margin-left: 20px; /* Adjust as needed */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.right-shopage-header-belowbar-cart-icon,
+.right-shopage-header-belowbar-signin-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hidden {
+  /* visibility: none; */
+  display: none;
+}
+
+/* bottom bar css */
+
+.navbar-left {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font-size: 13px;
+  list-style: none;
+}
+
+.header__nav-item {
+  padding-right: 20px;
+  display: inline-block;
+}
+
+.header__nav-item:last-child {
+  padding-right: 0;
+}
+
+.header__nav-link {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #323232;
+  animation-name: fadeIndown;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeIndown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.header__nav-link::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 15px;
+  left: auto;
+  right: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header__nav-item:hover .header__nav-link {
+  color: #02b290;
+}
+
+.header__nav-item:hover .header__nav-link::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+  background-color: #02b290;
+}
+
+.header__nav-item a {
+  margin: 0px 14px;
+  color: #222222;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.header__nav-item:last-child {
+  padding-right: 0;
+}
+
+.product-modal-shopage {
+  position: absolute;
+  width: 100%;
+  top: 140px;
+  left: 0;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* CSS for Shop List */
+.shopsContainer {
+  padding: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #333;
+}
+
+.allShops {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.anchorStyle {
+  text-decoration: none;
+  color: #333;
+  /* margin-right: 20px;
+  margin-bottom: 20px; */
+  width: 250px; /* Adjust as needed */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  /* margin: 0px 20px; */
+}
+
+.anchorStyle:hover {
+  transform: translateY(-5px);
+}
+
+.shopLogo img {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  object-fit: contain;
+  margin: 10px;
+}
+
+.shopAddress {
+  padding: 10px;
+}
+
+.shopAddress h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.shopAddress p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}

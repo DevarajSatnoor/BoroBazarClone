@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Routecomponent from './route/Routecomponent';
+import { CartProvider } from './redux/CartContext'; // Import the CartProvider
+import "tailwindcss/tailwind.css"
+import Shopage from './components/pages/home/Shopage';
+import Slidehoveritems from './components/pages/home/Slidehoveritems';
+import ProductList from './components/products/ProductsList';
+import AboutUsBoro from './components/header&footer/AboutUsBoro';
+import ContactUs from './components/header&footer/ContactUsBoro';
+import SliderHome from './components/pages/home/SliderHome';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartProvider> {/* Wrap your components with the CartProvider */}
+        <Routecomponent />
+        {/* <SliderHome/> */}
+      </CartProvider>
     </div>
   );
 }

@@ -1,0 +1,145 @@
+.bg{
+    /* border: 2px solid black; */
+    height: 380px;
+    width: 100%;
+    background-image: url("../components/assets/about-us.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutus{
+    height: 450px;
+    width: 100%;
+  
+
+}
+.aboutus h2{
+    color: rgb(0 0 0 );
+    font-weight: 600;
+    font-size: 1.525rem;
+    line-height: 1.75rem;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+.content{
+    color:  rgb(89 89 89);
+    margin-left: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+}
+.content strong{
+    font-weight: 700;
+}
+.content a{
+    text-decoration: none;
+    color: rgb(2 178 144 );
+
+}
+.content a:hover{
+    color: rgb(89 89 89);
+}
+.imageBox1{
+    height: 430px;
+    width: 100%;
+    /* border: blue 2px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+;
+
+
+}
+.imageBox1 img{
+    height: 400px;
+    width: 47%;
+    margin-bottom: 50px;
+}
+
+.content2{
+    height: 280px;
+    width: 100%;
+    /* border: 2px solid red; */
+   
+    
+}
+.content2 p{
+    color:  rgb(89 89 89);
+    margin-left: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+}
+.content2 a{
+    text-decoration: none;
+    color: rgb(2 178 144 ) ;
+}
+.content2 a:hover{
+    color: rgb(89 89 89);
+}
+
+.imageBox2{
+    height: 280px;
+    width: 100%;
+    /* border: 2px solid crimson; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.imageBox2 img{
+    /* height: 260px; */
+    width: 31%;
+}
+.content3{
+    height: 300px;
+    width: 100%;
+    /* border: 2px solid green; */
+}
+.content3 p{
+    color:  rgb(89 89 89);
+    margin-left: 30px;
+    line-height: 30px;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+.bg2{
+    height: 450px;
+    width: 95%;
+    margin-left: 30px;
+    /* border: 2px solid hotpink; */
+    background-image: url("../components/assets/6.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.content4{
+    height: 30px;
+    width: 100%;
+    /* border: 2px solid grey; */
+}
+.content4 h2{
+    margin-left: 30px;
+    font-weight: 600;
+    font: bolder;
+
+}
+.content4 p{
+    color:  rgb(89 89 89);
+    margin-left: 30px;
+    line-height: 30px;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+.content4 h3{
+    margin-left: 30px;
+    font-weight: 400;
+    
+}
+.content4 a{
+    text-decoration: none;
+    color: rgb(2 178 144 ) ;
+}
+.content4 a:hover{
+    color: rgb(89 89 89);
+}

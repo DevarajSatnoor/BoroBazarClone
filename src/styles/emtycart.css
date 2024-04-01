@@ -1,0 +1,123 @@
+.empty-cart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 80px;
+    background-color: #f0f0f0;
+  }
+  
+  .empty-cart-head p {
+    font-size: 20px;
+  }
+  
+  .empty-cart-head span {
+    cursor: pointer;
+  }
+  
+  .empty-cart-products-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 400px;
+  }
+  
+  .empty-cart-img img {
+    width: 150px;
+  }
+  
+  .img-content {
+    text-align: center;
+  }
+  
+  .cart-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .cart-item img {
+    max-width: 100%;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .quantity-controls button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #02b290;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .quantity-controls button:hover {
+    background-color: #02897f;
+  }
+  
+  .quantity-controls span {
+    font-size: 16px;
+  }
+  
+  .empty-cart-foot {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .empty-cart-foot p {
+    font-size: 14px;
+  }
+  
+  .empty-cart-foot-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .empty-cart-foot-head p {
+    font-size: 18px;
+  }
+  
+  .empty-cart-foot-head span {
+    font-size: 18px;
+  }
+  
+  .empty-cart-button {
+    text-align: center;
+  }
+  
+  .empty-cart-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #02b290;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  .empty-cart-button button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .empty-cart-button button:disabled:hover {
+    background-color: #ccc;
+  }
+  
+  

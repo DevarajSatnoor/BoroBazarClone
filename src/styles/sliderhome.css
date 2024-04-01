@@ -1,0 +1,88 @@
+.footer-carousel-container {
+   
+
+    /* max-width: 800px;  */
+    width: 100%;
+  }
+   
+  /* Style for each slide */
+  .slick-slide {
+    /* padding: 0 10px; Adjust horizontal spacing/ */
+    /* margin: 0px 40px; */
+    margin-top: 10px;
+    /* width: 600px; */
+  }
+   
+  /* Style for the image */
+  .slick-slide img {
+    width: 100%; /* Ensure images fill their container */
+    padding: 0px 10px;
+    border-radius: 10px; /* Add rounded corners to images */
+    /* transform: scale(1.2); */
+  }
+   
+  .slick-slide img:hover{
+    transform: scale(1.2);
+  }
+
+  /* Style for the caption */
+  .footer-caption {
+    text-align: center;
+    margin-top: 10px; /* Add spacing between image and caption */
+  }
+   
+  /* Style for the previous and next buttons */
+  .footer-prev-button,
+  .footer-next-button {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure buttons appear above slides */
+    background: none;
+    color: #02b290;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+   
+  .footer-prev-button {
+    left: 5px;
+    /* width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #02b901;
+    color: #fff;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+   
+  .footer-next-button {
+    right: 0px;
+  }
+
+  .slide-item {
+    position: relative;
+  }
+  
+  .slide-item:hover .slide-image {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-caption {
+    /* position: absolute; */
+    bottom: 20px;
+    left: 20px;
+    color: rgb(83, 82, 82);
+  }
+  
+  /* Add additional styling for arrows and other elements as needed */
+  

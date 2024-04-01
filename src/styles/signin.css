@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.sign-boro-main-right-content{
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 6px; */
+}
+ 
+.sign-boro-main-leftside-image{
+    width: 55%;
+    /* max-width: 524px; */
+}
+ 
+ 
+.sign-boro-main{
+    max-width: 1000px;
+    max-height: 590px;
+    display: flex;
+}
+.signin-boro-forgot{
+    border: none;
+    background: none;
+    cursor: pointer;
+ 
+}  
+.signin-boro-forgot:hover{
+    color: black;
+    font-weight: 600;
+ 
+}

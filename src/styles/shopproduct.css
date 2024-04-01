@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .shop-area-365-main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .area365-banner-1 img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .shop-area-365-below-banner-MAIN {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    /* position: fixed; */
+  }
+  
+  .area-365-below-banner-left-main {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px #818181;
+    width: calc(100% - 20px); /* Adjusted width */
+    max-width: 382px;
+    height: 700px;
+    padding: 60px 30px 0px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: sticky;
+    top: 80px;
+  }
+
+  .area365-below-banner-left-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .area365-below-banner-left-1 img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .area365-below-banner-left-1 h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .area365-below-banner-left-1 p {
+    color: #818181;
+  }
+  
+  .area-365-logo {
+    display: flex;
+    padding-top: 20px;
+  }
+  
+  .area-365-logo button {
+    border: none;
+    background: none;
+    padding-right: 20px;
+  }
+  
+  .area-365-logo button:last-child {
+    padding-right: 10px;
+  }
+  
+  .area365-below-banner-left-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .area365-below-banner-left-2-address,
+  .area365-below-banner-left-2-phone,
+  .area365-below-banner-left-2-website {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .area365-below-banner-left-2-address h4,
+  .area365-below-banner-left-2-phone h4,
+  .area365-below-banner-left-2-website h4 {
+    margin-bottom: 4px;
+  }
+  
+  .area365-below-banner-left-2-address p,
+  .area365-below-banner-left-2-phone p,
+  .area365-below-banner-left-2-website a {
+    color: #818181;
+  }
+  
+  .area365-below-banner-right {
+    margin-left: 20px;
+    /* border: 1px solid grey; */
+    width: calc(100% - 382px - 40px); /* Adjusted width */
+    height: auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
