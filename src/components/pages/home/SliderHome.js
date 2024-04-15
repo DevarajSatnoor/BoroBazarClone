@@ -9,6 +9,8 @@ import boro3 from "../../assets/sliderboro.img3.png";
 import boro4 from "../../assets/sliderboro.img4.png";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { Link } from "react-router-dom";
+
  
 function SliderHome() {
   const settings = {
@@ -25,6 +27,7 @@ function SliderHome() {
  
   return (
     <Slider {...settings}>
+      <Link to={'/shop/shophomeappliances'}>
       <div className="slide-item">
         <img
           className="slide-image"
@@ -36,6 +39,7 @@ function SliderHome() {
           <p>Your body's way of telling you that it's</p>
         </div>
       </div>
+      </Link>
       <div className="slide-item">
         <img
           className="slide-image"

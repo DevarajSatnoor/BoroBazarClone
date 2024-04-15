@@ -13,6 +13,7 @@ import ProductView from "../../products/ProductView";
 function GroceryAdd() {
   const { addToCart } = useContext(CartContext);
   const [count, setCount] = useState({});
+  const [selectedItem, setSelectedItem] = useState(null);
   const [showModal, setShowModal] = useState(false); // State to manage modal visibility
   
   const handleAddToCart = (item) => {
@@ -34,12 +35,14 @@ function GroceryAdd() {
     setCount(updatedCount);
   };
 
-  const openModal = () => {
+  const openModal = (item) => {
     setShowModal(true);
+    setSelectedItem(item);
   };
 
   const closeModal = () => {
     setShowModal(false);
+    setSelectedItem(null); // Reset selected item when modal closes
   };
 
   const groceryItems = [
@@ -95,7 +98,7 @@ function GroceryAdd() {
         {groceryItems.map((item) => (
           <div  key={item.id} className="card" title={item.title}>
             <div  className="image-container">
-              <div onClick={openModal} className="image-box">
+              <div onClick={() => openModal(item)} className="image-box"> {/* Pass item to openModal */}
                 <img src={item.imageUrl} alt="" />
               </div>
               {item.onSale && <p className='on-sale'>ON SALE</p>}
@@ -105,7 +108,7 @@ function GroceryAdd() {
                     <i className="fa-thin fa-plus"></i>
                   </button>
                 ) : (
-                  <button onClick={openModal} className="view-btn">
+                  <button onClick={() => openModal(item)} className="view-btn"> {/* Pass item to openModal */}
                     <VisibilityIcon sx={{color:'white'}} />
                   </button>
                 )}
@@ -119,7 +122,7 @@ function GroceryAdd() {
               </div>
             </div>
             <div className="details">
-              ${item.price} <del>${item.price}</del>
+            ₹{item.price} <del style={{ textDecoration: "line-through" }}>₹{item.price}</del>
               <p>{item.title}</p>
               <div className="">{item.description}</div>
             </div>
@@ -127,7 +130,7 @@ function GroceryAdd() {
         ))}
       </div>
       {/* Render the modal if showModal is true */}
-      {showModal && <ProductView onClose={closeModal} />}
+      {showModal && <ProductView onClose={closeModal} selectedItem={selectedItem} />}
     </div>
   );
 }

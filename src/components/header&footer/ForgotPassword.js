@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import graphs from '../assets/logoboro.svg'
+import Signin from "./signpages/Signin";
 
 const style = {
   position: "absolute",
@@ -141,7 +142,6 @@ function ForgotPassword() {
         </div>
         <div
           className="forgot-pswrd-back-to-login"
-          style={{ padding: "10px 20px 10px 20px", marginTop: "15px" , color:'#818181'}}
         >
           Back to{" "}
           <button
@@ -150,13 +150,13 @@ function ForgotPassword() {
               fontSize: "16px",
               border: "none",
               background: "none",
-              textDecoration: "underline",
+            //   textDecoration: "underline",
               cursor: "pointer"
             }}
             onMouseEnter={(e) => (e.target.style.color = "#818181")}
            onMouseLeave={(e) => (e.target.style.color = "#000")}
           >
-            Login
+            <Signin  />
           </button>
         </div>            
       </div>

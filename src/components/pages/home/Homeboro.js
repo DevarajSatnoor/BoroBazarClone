@@ -4,15 +4,14 @@ import "../../../styles/homeboro.css";
 import homban from "../../assets/mainhome-boro.webp";
 import Slidehoveritems from "./Slidehoveritems";
 import GroceryAdd from "../home/GroceryAdd";
-import ban from '../../assets/banner-7.webp'
+import ban from "../../assets/banner-7.webp";
 import Mostsaledgrocery from "./Mostsaledgrocery";
-import hcard from '../../assets/hcard.png';
-import hcard1 from '../../assets/hcard2.png'
-import hcard2 from '../../assets/hcard3.png'
-import hcard3 from '../../assets/hcard4.png'
+import hcard from "../../assets/hcard.png";
+import hcard1 from "../../assets/hcard2.png";
+import hcard2 from "../../assets/hcard3.png";
+import hcard3 from "../../assets/hcard4.png";
 import SliderHome from "./SliderHome";
 import { Link } from "react-router-dom";
-
 
 function Homeboro() {
   const shoppingBoxes = [
@@ -43,12 +42,14 @@ function Homeboro() {
       <div className="home-container-boro">
         <img src={homban} alt="" className="home-container-imgeg" />
         <div className="overlay-content">
-          <h1>HealthyVegetable That Desrve To Eat Fresh</h1>
+          <h1>Healthy Vegetable That Deserve   To Eat Fresh</h1>
           <p>
             We soource and Sell the Very Best Vegetable ,Groceries and some
             oTher Things ,sourced with the Greatest Careb from Former
           </p>
-          <input type="text" placeholder="What are you Looking for you..." />
+         <form action="">
+         <input type="search" placeholder="What are you Looking for you..." />
+         </form>
         </div>
         <div className="shoppingg-boxes">
           {shoppingBoxes.map((box, index) => (
@@ -57,9 +58,17 @@ function Homeboro() {
               key={index}
               style={{ backgroundColor: box.backgroundColor }}
             >
-             <Link to={'/shop/shophomeappliances/${index}'}> <div className="shopping-box-content-img">
-                <img src={box.imgUrl} alt="Product" style={{width:'100px',height:'80px'}} /> {/* Render image here */}
-              </div></Link>
+              <Link to={"/shop/shophomeappliances/${index}"}>
+                {" "}
+                <div className="shopping-box-content-img">
+                  <img
+                    src={box.imgUrl}
+                    alt="Product"
+                    style={{ width: "100px", height: "80px" }}
+                  />{" "}
+                  {/* Render image here */}
+                </div>
+              </Link>
               <div className="shopping-box-content">
                 {box.content.map((text, idx) => (
                   <p key={idx}>{text}</p>
@@ -71,18 +80,39 @@ function Homeboro() {
         <Slidehoveritems />
       </div>
       <div className="grocery list">
-        <GroceryAdd/>
+        <GroceryAdd />
       </div>
       <div className="banner-7">
-       <Link to={'/shop/productlist'}> <img src={ban} alt="" /></Link>
+        <Link to={"/shop/productlist"}>
+          {" "}
+          <img src={ban} alt="" />
+        </Link>
       </div>
       <div className="most-saled-groceries">
-      <Mostsaledgrocery/>
+        <Mostsaledgrocery />
       </div>
       <div className="slider">
-      <p style={{fontSize:'30px',fontWeight:700,textAlign:'center',marginBottom:'10px'}}>Curated Collections</p>
-      <p style={{fontSize:'20px',fontWeight:500,textAlign:'center',marginBottom:'20px'}}>We have  categories the quality grocery items</p>
-        <SliderHome/>
+        <p
+          style={{
+            fontSize: "30px",
+            fontWeight: 700,
+            textAlign: "center",
+            marginBottom: "10px",
+          }}
+        >
+          Curated Collections
+        </p>
+        <p
+          style={{
+            fontSize: "20px",
+            fontWeight: 500,
+            textAlign: "center",
+            marginBottom: "20px",
+          }}
+        >
+          We have categories the quality grocery items
+        </p>
+        <SliderHome />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import styles from "../../styles/aboutUs.module.css"
 import pic1 from "../assets/1.png"
 import pic2 from "../assets/2.png"
@@ -7,6 +7,11 @@ import pic4 from "../assets/4.png"
 import pic5 from "../assets/5.png"
 
 function AboutUsBoro() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page when the component mounts
+  }, []);
+
   return (
     <div>
         <div className={styles.bg}></div>

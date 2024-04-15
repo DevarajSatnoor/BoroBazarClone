@@ -105,6 +105,11 @@
     margin-bottom: 0px;
   }
   
+  .header__logo-link {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .footer .footer__social-nav {
     display: flex;
     justify-content: flex-start;

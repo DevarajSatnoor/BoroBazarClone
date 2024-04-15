@@ -12,6 +12,13 @@ import ProductList from "../components/products/ProductsList";
 import AboutUsBoro from "../components/header&footer/AboutUsBoro";
 import ContactUs from "../components/header&footer/ContactUsBoro";
 import ShopHomeAppliances from "../components/pages/shops/ShopHomeAppliances";
+import Signin from "../components/header&footer/signpages/Signin";
+import CreateAccount from "../components/header&footer/CreateAccount";
+import PrivacyPolicy from "../components/header&footer/PrivacyPolicy";
+import TermsCondition from "../components/header&footer/TermsCondition";
+import Faq from "../components/header&footer/Faq";
+import Giproducts from "../components/products/Giproducts";
+import CheckoutPage from "../components/products/CheckoutPage";
 // import CreateAccount from "../components/header&footer/CreateAccount";
 
 function Routecomponent() {
@@ -24,9 +31,7 @@ function Routecomponent() {
         <Route
           path="shop/*"
           element={<ShopageWithoutHeaderAndFooter />}
-          
         ></Route>
-
       </Routes>
     </BrowserRouter>
   );
@@ -54,11 +59,19 @@ function ShopageWithoutHeaderAndFooter() {
         <Route path="/shopproducts/:id" element={<Shopproducts />} />
         <Route path="/productlist" element={<ProductList />} />
         <Route path="/productlist/:id" element={<ProductList />} />
-        <Route path="/aboutus"  element={<AboutUsBoro/>}/>
-        <Route path="/contactus" element={<ContactUs/>}/>
-        <Route  path="/shophomeappliances/:id" element={<ShopHomeAppliances/>}/>
-        
-       
+        <Route path="/aboutus" element={<AboutUsBoro />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route
+          path="/shophomeappliances/:id"
+          element={<ShopHomeAppliances />}
+        />
+        <Route path="/shophomeappliances" element={<ShopHomeAppliances />} />
+        <Route path="/privacypage" element={<PrivacyPolicy />} />
+        <Route path="/termsconditionpage" element={<TermsCondition />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/checkout" element={<CheckoutPage/>} />
+
+        <Route path="/states/:state" element={<Giproducts/>}/>
       </Routes>
       <ShopFooter />
     </>

@@ -63,7 +63,7 @@ function ProductList() {
           className={`dropdown-container ${
             isFreshVegetablesOpen ? "show" : ""
           }`}
-        >
+        >    
           <div className="dropdown-container-1">
             <label
               htmlFor="option1"

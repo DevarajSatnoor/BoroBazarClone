@@ -18,6 +18,14 @@
     width: 55%;
     /* max-width: 524px; */
 }
+.forgot-pswrd-back-to-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
+    color: #818181;
+}
  
  
 .sign-boro-main{

@@ -7,26 +7,50 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import logo from '../assets/logoboro.svg'
+import logo from "../assets/logoboro.svg";
 import Drawer from "@mui/material/Drawer";
 import Emptycart from "./Emptycart";
 import SignBoro from "./SignBoro";
+import Signin from "./signpages/Signin";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
-
-
-
-
+const states = [
+  "andhra Pradesh",
+  "arunachal Pradesh",
+  "assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Kerala",
+  "Karnataka",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+];
 
 function Header() {
   const [showProductModal, setShowProductModal] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
   const { cartItems } = useContext(CartContext);
-  const [showCartDrawer, setShowCartDrawer] = useState(false);
-
-  const toggleCartDrawer1 = () => {
-    setShowCartDrawer(!showCartDrawer);
-  };
+  const [selectedState, setSelectedState] = useState(null);
 
   const handleProductMouseEnter = () => {
     setShowProductModal(true);
@@ -122,7 +146,34 @@ function Header() {
               onMouseEnter={handleProductMouseEnter}
               onClick={handleProductModalClick}
             >
-              <marquee behavior="scroll" direction="left" ><img src={logo} alt="" /></marquee>
+             
+              {states.slice(0,10).map((state) => (
+                <Link
+                  className="capitalize"
+                  to={`/shop/states/${state}`}
+                  onClick={() => setSelectedState(state)}
+                >
+                  {state}
+                </Link>
+              ))}
+              {states.slice(10, 20).map((state) => (
+                <Link
+                  className="capitalize"
+                  to={`/shop/states/${state}`}
+                  onClick={() => setSelectedState(state)}
+                >
+                  {state}
+                </Link>
+              ))}
+              {states.slice(20, 30).map((state) => (
+                <Link
+                  className="capitalize"
+                  to={`/shop/states/${state}`}
+                  onClick={() => setSelectedState(state)}
+                >
+                  {state}
+                </Link>
+              ))}
             </div>
           )}
           <div className="right-header-content">
@@ -141,8 +192,25 @@ function Header() {
             <div className="signin-icon-box">
               <Link to={"/"} className="signin-icon">
                 {" "}
-        
-                <SignBoro/>
+                {/* <SignBoro /> */}
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <AccountCircleOutlinedIcon
+                      sx={{ color: "#bebfc1", fontSize: "25px" }}
+                    />
+                    My account
+                  </button>
+                  <div class="dropdown-content">
+                    <Link to={"/"}>
+                      <Signin />
+                    </Link>
+                    <Link to={"/shop/privacypage"}>Privacy & Policy </Link>
+                    <Link to={"/shop/termsconditionpage"}>
+                      Tearms & Condition
+                    </Link>
+                    <Link to={"/shop/faq"}>FAQ</Link>
+                  </div>
+                </div>
               </Link>
             </div>
           </div>
@@ -154,7 +222,7 @@ function Header() {
             onClose={toggleCartDrawer}
           >
             <div style={{ width: 400 }}>
-              <Emptycart />
+              <Emptycart onClose={toggleCartDrawer} />
             </div>
           </Drawer>
         </div>

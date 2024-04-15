@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "../../styles/contact.module.css";
 
 function ContactUs() {
@@ -15,6 +15,11 @@ function ContactUs() {
       setError(true);
     }
   };
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page when the component mounts
+  }, []);
 
   return (
     <div>

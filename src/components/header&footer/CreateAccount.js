@@ -5,6 +5,7 @@ import graphs from "../assets/sliderboro.img3.png";
 import graphs1 from "../assets/logoboro.svg";
 import Switch from "@mui/material/Switch";
 import SignBoro from "./SignBoro";
+import Signin from "./signpages/Signin";
 
 const style = {
   position: "absolute",
@@ -119,7 +120,7 @@ function CreateAccount() {
                   }}
                 >
                   {" "}
-                  <SignBoro name={"signin"}/>
+                  <Signin/>
                 </button>
               </p>
 
