@@ -21,8 +21,8 @@ function ContactUs() {
     window.scrollTo(0, 0); // Scrolls to the top of the page when the component mounts
   }, []);
 
-  return (
-    <div>
+  return  (
+    <div >
       <div className={styles.bg}>
         <div className={styles.bgcontent}>
           {" "}

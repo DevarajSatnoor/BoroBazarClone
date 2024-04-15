@@ -88,4 +88,11 @@ table tr td[variant='body1']{
     background-color: #e6e4e4;
 }
 
+.order-confirm-notification{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
 

@@ -12,6 +12,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import AddIcon from "@mui/icons-material/Add";
 import Modal from "@mui/material/Modal";
 import { CartContext } from "../../redux/CartContext";
+import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
 import { FlashOnSharp } from "@mui/icons-material";
 
 export default function CheckoutPage() {
@@ -41,6 +42,7 @@ export default function CheckoutPage() {
   const [orderPlaced, setOrderPlaced] = useState(false); // State variable to track order placement
   const [orderConfirmationModalOpen, setOrderConfirmationModalOpen] =
     useState(false);
+  const [orderNumber, setOrderNumber] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scrolls to the top of the page when the component mounts
@@ -105,13 +107,14 @@ export default function CheckoutPage() {
     setSelectedPaymentOption(event.target.value);
   };
 
-  const handlePlaceOrder = () => {
-    setOrderPlaced(true); // Set orderPlaced to true when the order button is clicked
-    toggleOrderConfirmationModal(); // Open the order confirmation modal
-  };
-
   const toggleOrderConfirmationModal = () => {
     setOrderConfirmationModalOpen(!orderConfirmationModalOpen);
+    // setOrderNumber(generatedOrderNumber);
+  };
+  const handlePlaceOrder = () => {
+    const generatedOrderNumber = "XRQ" + Math.floor(Math.random() * 10000);
+    setOrderPlaced(true);
+    toggleOrderConfirmationModal(generatedOrderNumber);
   };
 
   return (
@@ -616,16 +619,29 @@ export default function CheckoutPage() {
         >
           {/* Order confirmation content here */}
           <p className="order-confirm-notification">
+            <VerifiedOutlinedIcon
+              sx={{ background: "#02b290", borderRadius: "50%", color: "#fff" }}
+            />
             Thank you. Your order has been received.
           </p>{" "}
           <br />
           <table border={"borderCollapse"} cellPadding={1} cellSpacing={0}>
             <tr>
-              <td variant="body1">ORDER NUMBER: XRQ4567</td>
-              <td variant="body1">DATE: April 22, 2021</td>
-              <td variant="body1">SEND MAIL: customer@demo.com</td>
-              <td variant="body1">TOTAL: $149.00</td>
-              <td variant="body1">PAYMENT METHOD: cash on delivery</td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                ORDER NUMBER: {orderNumber}
+              </td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                DATE: {new Date().toDateString()}
+              </td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                SEND MAIL: {emaill}
+              </td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                TOTAL: {calculateTotal()}
+              </td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                PAYMENT METHOD: cash on delivery
+              </td>
             </tr>
           </table>{" "}
           <br />
@@ -638,13 +654,23 @@ export default function CheckoutPage() {
             cellPadding={1}
             style={{ borderCollapse: "collapse", width: "100%" }}
           >
-            <caption style={{textAlign:'left',paddingLeft:'20px',fontSize:'20px',fontWeight:700}}>Order details:</caption> <br />
+            <caption
+              style={{
+                textAlign: "left",
+                paddingLeft: "20px",
+                fontSize: "20px",
+                fontWeight: 700,
+              }}
+            >
+              Order details:
+            </caption>{" "}
+            <br />
             <tr>
               <th
                 style={{
                   backgroundColor: "#f2f2f2",
                   borderBottom: "1px solid #aaa",
-                  borderRadius:'5px'
+                  borderRadius: "5px",
                 }}
               >
                 Product
@@ -658,39 +684,84 @@ export default function CheckoutPage() {
                 Total
               </th>
             </tr>
+            {/* <tr> */}
+              {cartItems.map((item) => (
+                <tr key={item.id}>
+                  <td style={{ borderBottom: "1px solid #aaa" }}>
+                    {item.title}({cartItems.filter((cartItem) => cartItem.id === item.id).length} items)
+                  </td>
+                  <td style={{ borderBottom: "1px solid #aaa" }}>
+                    {item.price}
+                  </td>
+                </tr>
+              ))}
+            {/* </tr> */}
+        
             <tr>
-              <td style={{ borderBottom: "1px solid #aaa" }}>
-                Fresh Green Leaf Lettuce
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
+                 Subtotal
               </td>
-              <td style={{ borderBottom: "1px solid #aaa" }}>50.00</td>
-            </tr>
-            <tr>
-              <td style={{ borderBottom: "1px solid #aaa" }}>
-                Leafy Romaine Mixed Lettuce
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
+                {calculateSubtotal()}
               </td>
-              <td style={{ borderBottom: "1px solid #aaa" }}>50.00</td>
-            </tr>
-            <tr>
-              <td style={{ borderBottom: "1px solid #aaa",    backgroundColor: "#f2f2f2", }}>Subtotal</td>
-              <td style={{ borderBottom: "1px solid #aaa",    backgroundColor: "#f2f2f2", }}>350.00</td>
             </tr>
             <tr>
               <td style={{ borderBottom: "1px solid #aaa" }}>Shipping</td>
-              <td style={{ borderBottom: "1px solid #aaa" }}>50.00</td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                {calculateShippingCharge()}
+              </td>
             </tr>
             <tr>
-              <td style={{ borderBottom: "1px solid #aaa",    backgroundColor: "#f2f2f2", }}>Payment method</td>
-              <td style={{ borderBottom: "1px solid #aaa" ,    backgroundColor: "#f2f2f2",}}>
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
+                Payment method
+              </td>
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
                 cash on delivery
               </td>
             </tr>
             <tr>
               <td style={{ borderBottom: "1px solid #aaa" }}>Total</td>
-              <td style={{ borderBottom: "1px solid #aaa" }}>$149.00</td>
+              <td style={{ borderBottom: "1px solid #aaa" }}>
+                {calculateTotal()}
+              </td>
             </tr>
             <tr>
-              <td style={{ borderBottom: "1px solid #aaa",    backgroundColor: "#f2f2f2", }}>Payment method</td>
-              <td style={{ borderBottom: "1px solid #aaa",    backgroundColor: "#f2f2f2", }}>new order</td>
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
+                Payment method
+              </td>
+              <td
+                style={{
+                  borderBottom: "1px solid #aaa",
+                  backgroundColor: "#f2f2f2",
+                }}
+              >
+                new order
+              </td>
             </tr>
           </table>
         </Box>
